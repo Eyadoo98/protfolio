@@ -16,6 +16,43 @@
             align-items: center;
             justify-content: center;
         }
+        
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .profile-image-container img {
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 
+                        0 0 40px rgba(153, 38, 240, 0.2);
+            background: transparent;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .profile-image-container:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), 
+                        0 0 60px rgba(153, 38, 240, 0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .profile-image-container {
+                margin-top: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -71,13 +108,10 @@
           <span><i class="fas fa-download"></i></span>
         </a>
       </div>
-      <!-- START THE CONTENT FOR THE VIDEO -->
+      <!-- START THE CONTENT FOR THE IMAGE -->
       <div class="col-md-6 intros text-end">
-        <div class="video-box position-relative">
-          <img src="images/arts/intro-section-illustration.png" alt="video illustration" class="img-fluid">
-          <span class="position-absolute top-50 start-50 translate-middle" style="z-index: 2;">
-            <i class="fas fa-play-circle"></i>
-          </span>
+        <div class="profile-image-container">
+          <img src="images/portfolio/eyad.png" alt="Eyad Jafar" class="img-fluid">
         </div>
       </div>
     </div>
